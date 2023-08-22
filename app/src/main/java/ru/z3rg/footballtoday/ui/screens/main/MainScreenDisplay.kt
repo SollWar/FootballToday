@@ -63,7 +63,7 @@ fun MainScreenPreview() {
 fun MainScreenDisplay(
     state: MainScreenState.Display,
     onState: (MainScreenState) -> Unit = {},
-    onItemClick: () -> Unit = {},
+    onItemClick: (Event) -> Unit = {}
 ) {
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
@@ -76,7 +76,7 @@ fun MainScreenDisplay(
                         .background(Color.White)
                         .fillMaxWidth()
                         .clickable {
-                            onItemClick()
+                            onItemClick(it)
                         }
                 ) {
                     Text(
