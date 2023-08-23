@@ -31,6 +31,7 @@ android {
 
 dependencies {
 
+
     implementation project(':domain')
 
     implementation 'com.google.dagger:hilt-core:2.47'
