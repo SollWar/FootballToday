@@ -1,12 +1,14 @@
-package ru.z3rg.footballtoday.ui
+package ru.z3rg.footballtoday.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ru.z3rg.domain.models.Event
+import ru.z3rg.footballtoday.ui.Screen
 import ru.z3rg.footballtoday.ui.screens.details.DetailsScreen
 import ru.z3rg.footballtoday.ui.screens.details.viewmodel.DetailsViewModel
 import ru.z3rg.footballtoday.ui.screens.main.MainScreenDisplay
@@ -16,13 +18,17 @@ import ru.z3rg.footballtoday.ui.screens.main.models.MainScreenState
 import ru.z3rg.footballtoday.ui.screens.main.viewmodel.MainScreenViewModel
 
 @Composable
-fun Navigation(
+fun navigationFromMain(
     mainScreenViewModel: MainScreenViewModel
-) {
+): NavHostController{
     val navHostController = rememberNavController()
     val mainScreenState = mainScreenViewModel.state.collectAsState()
 
-    NavHost(navController = navHostController, startDestination = Screen.MainScreen.route) {
+    NavHost(
+        navController = navHostController,
+        route = "main_route",
+        startDestination = Screen.MainScreen.route
+    ) {
         var eventItemDetail = Event()
         composable(route = Screen.MainScreen.route) {
             when (mainScreenState.value) {
@@ -60,4 +66,5 @@ fun Navigation(
             )
         }
     }
+    return navHostController
 }

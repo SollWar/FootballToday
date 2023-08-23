@@ -65,8 +65,11 @@ fun MainScreenDisplay(
     onState: (MainScreenState) -> Unit = {},
     onItemClick: (Event) -> Unit = {}
 ) {
+
     LazyColumn(
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
+        modifier = Modifier
+            .padding(bottom = 80.dp),
+        contentPadding = PaddingValues(top = 16.dp, end = 16.dp, start = 16.dp),
         content = {
             items(state.livescore.events) {
                 Column(
