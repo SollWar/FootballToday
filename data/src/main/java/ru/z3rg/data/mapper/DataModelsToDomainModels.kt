@@ -21,8 +21,6 @@ fun resultToEvent(result: Result): Event {
         homeTeamLogo = result.home_team_logo,
         awayTeamLogo = result.away_team_logo,
         eventFinalResult = result.event_final_result,
-        eventStatus = result.event_status,
-        homeGoals = result.event_final_result.split("-")[0],
-        awayGoals = result.event_final_result.split("-")[1]
+        eventStatus = result.event_status
     )
 }

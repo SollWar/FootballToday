@@ -8,6 +8,4 @@ data class Event(
     val awayTeamLogo: String? = "", // away_team_logo
     val eventFinalResult: String? = "", // event_final_result
     val eventStatus: String? = "", // event_status
-    val homeGoals: String = "",
-    val awayGoals: String = ""
 )

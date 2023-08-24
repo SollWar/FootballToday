@@ -38,20 +38,16 @@ fun MainScreenPreview() {
                         homeTeamLogo = "",
                         awayTeamLogo = "",
                         eventFinalResult = "1 - 1",
-                        eventStatus = "Пеналитити",
-                        homeGoals = "1",
-                        awayGoals = "1"
+                        eventStatus = "Пенальти"
                     ),
                     Event(
                         leagueName = "Лига",
                         eventHomeTeam = "Домашние",
                         eventAwayTeam = "Гости",
-                        homeTeamLogo = "https://apiv2.allsportsapi.com/logo/26467_mafra-u23.jpg",
+                        homeTeamLogo = "",
                         awayTeamLogo = "",
                         eventFinalResult = "1 - 1",
-                        eventStatus = "Пеналитити",
-                        homeGoals = "1",
-                        awayGoals = "1"
+                        eventStatus = "Пенальти"
                     )
                 )
             )
@@ -68,7 +64,7 @@ fun MainScreenDisplay(
 
     LazyColumn(
         modifier = Modifier
-            .padding(bottom = 80.dp),
+            .padding(bottom = 60.dp),
         contentPadding = PaddingValues(top = 16.dp, end = 16.dp, start = 16.dp),
         content = {
             items(state.livescore.events) {

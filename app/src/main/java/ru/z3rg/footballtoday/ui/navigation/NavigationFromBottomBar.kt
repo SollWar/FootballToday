@@ -5,24 +5,28 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ru.z3rg.footballtoday.ui.Screen
 import ru.z3rg.footballtoday.ui.screens.main.viewmodel.MainScreenViewModel
 import ru.z3rg.footballtoday.ui.screens.webview.WebViewScreen
 
 @Composable
 fun navigationFromBottomBar(
-    mainScreenViewModel: MainScreenViewModel
+    mainScreenViewModel: MainScreenViewModel,
+    onMain: () -> Unit = {},
+    onWebView: () -> Unit = {},
+    navHostController: NavHostController = rememberNavController()
 ): NavHostController {
-    val navHostController = rememberNavController()
+    val navigationFromMain = navigationFromMain(mainScreenViewModel = mainScreenViewModel)
 
     NavHost(
         navController = navHostController,
-        startDestination = Screen.MainScreen.route
+        startDestination = "main"
     ){
-        composable(route = Screen.MainScreen.route) {
-            navigationFromMain(mainScreenViewModel = mainScreenViewModel).currentDestination
+        composable(route = "main") {
+            onMain()
+            navigationFromMain.currentDestination
         }
         composable(route = "web_view") {
+            onWebView()
             WebViewScreen()
         }
     }

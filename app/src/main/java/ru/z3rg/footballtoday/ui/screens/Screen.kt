@@ -1,4 +1,4 @@
-package ru.z3rg.footballtoday.ui
+package ru.z3rg.footballtoday.ui.screens
 
 sealed class Screen(val route: String) {
     data object MainScreen: Screen("main_screen")

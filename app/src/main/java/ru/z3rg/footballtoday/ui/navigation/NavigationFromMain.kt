@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ru.z3rg.domain.models.Event
-import ru.z3rg.footballtoday.ui.Screen
+import ru.z3rg.footballtoday.ui.screens.Screen
 import ru.z3rg.footballtoday.ui.screens.details.DetailsScreen
 import ru.z3rg.footballtoday.ui.screens.details.viewmodel.DetailsViewModel
 import ru.z3rg.footballtoday.ui.screens.main.MainScreenDisplay
