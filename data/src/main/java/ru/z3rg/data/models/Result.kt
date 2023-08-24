@@ -14,5 +14,6 @@ data class Result(
     val league_name: String,
     val league_round: String,
     val league_season: String,
-    val stage_name: String
+    val stage_name: String,
+    val goalscorers: List<GoalScorers>
 )

@@ -8,4 +8,9 @@ data class Event(
     val awayTeamLogo: String? = "", // away_team_logo
     val eventFinalResult: String? = "", // event_final_result
     val eventStatus: String? = "", // event_status
-)
+    val goals: ArrayList<Goals> = arrayListOf()
+) {
+    fun addGoals(goal: Goals) {
+        goals.add(goal)
+    }
+}

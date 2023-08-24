@@ -88,6 +88,60 @@ fun DetailsScreen(
                 )
             }
         }
+        Text(
+            modifier = Modifier
+                .padding(top = 6.dp, bottom = 6.dp)
+                .fillMaxWidth(),
+            text = "Goals:"
+        )
+        state.event.goals.forEach {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    modifier = Modifier
+                        .weight(0.3f),
+                    text = it.time + "'",
+                    style = TextStyle(
+                        textAlign = TextAlign.Center
+                    )
+                )
+                Text(
+                    modifier = Modifier
+                        .weight(1f),
+                    text = it.homeScorer,
+                    style = TextStyle(
+                        textAlign = TextAlign.Center
+                    )
+                )
+                Column(
+                    modifier = Modifier
+                        .weight(0.5f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = it.score,
+                        style = TextStyle(
+                            textAlign = TextAlign.Center
+                        )
+                    )
+                }
+                Text(
+                    modifier = Modifier
+                        .weight(1f),
+                    text = it.awayScorer,
+                    style = TextStyle(
+                        textAlign = TextAlign.Center
+                    )
+                )
+                Spacer(
+                    modifier = Modifier
+                        .weight(0.3f)
+                )
+            }
+        }
         if (state.event.eventStatus!!.isDigitsOnly()) {
             Text(
                 modifier = Modifier
